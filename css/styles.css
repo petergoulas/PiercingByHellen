@@ -64,7 +64,7 @@ body {
   align-items: center;
   /* margin-right: 3rem; */
   color:black;
-  gap: 60px;
+  gap: 3.75rem;
 }
 
 /* invisible third item to align the navbar the way we like it */
@@ -77,7 +77,15 @@ body {
   /* margin-right:50rem; */
 }
 
-.second_section {
+hr {
+  width: 40px;
+  margin: auto;
+  background-color: black;
+  border: none;
+  height: 2.5px;
+}
+
+.second_section_home {
   color: black;
   /* background-color: blue; */
   display: flex;
@@ -102,7 +110,7 @@ body {
 .third_section_text1{
   /* font-family: Fredericka the Great; */
   /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
-  font-size: 55px;
+  font-size: 3.438rem;
   /* font-style: normal;
   font-weight: 400; */
   font-family: 'Fredericka the Great';
@@ -111,7 +119,7 @@ body {
 
 .third_section_title
 .third_section_text2{
-  font-size: 35px;
+  font-size: 2.188rem;
   /* font-style: normal;
   font-weight: 400; */
   /* font-family: 'Rubik Bubbles'; */
@@ -141,11 +149,17 @@ body {
 
 .fifth_section_title_a{
   font-family: "Snell Roundhand W01 Script";
-  font-size: 45px;
+  font-size: 2.813rem;
 }
 
 .fifth_section_title_c{
   font-size: 15px;
+  font-family: 'Overlock', sans-serif;
+  color: rgb(139, 138, 138);
+}
+
+.github_pages_link_decoration {
+  text-decoration: underline;
 }
 
 /* .lower_section span {
@@ -178,7 +192,7 @@ a:hover {
   background-color: purple;
 } */
 
-a:link { color: cyan; font-size: 20px; font-family: Overlock, Helvetica, sans-serif, sans-serif; font-style: italic; font-weight: 700;}
-a:visited { text-decoration: none;  font-size: 20px; font-family: Overlock, Helvetica, sans-serif; font-style: italic; font-weight: 700;}
+a:link {text-decoration-line:none; color: rgb(119, 103, 239); font-size: 1.5rem; font-family: 'Overlock', Helvetica, sans-serif, sans-serif; font-style: italic; font-weight: 700;}
+a:visited {text-decoration-line:none; color: rgb(119, 103, 239); font-size: 1.5rem; font-family: 'Overlock', Helvetica, sans-serif; font-style: italic; font-weight: 700;}
 a:hover { color: black}
 a:active { color: black}
