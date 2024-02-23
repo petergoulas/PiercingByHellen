@@ -129,6 +129,87 @@ hr {
   /* padding: 0.5rem; */
 }
 
+.third_section_title
+.third_section_text_contact{
+  /* font-family: Fredericka the Great; */
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  font-size: 2.35rem;
+  /* font-style: normal; */
+  font-weight: 700;
+  font-family: "Fredericka the Great", 'fantasy';
+  /* line-height: 42px; */
+  line-height: 1.4em;
+  letter-spacing: normal;
+  font-stretch: 100%;
+  /* padding: 5.5rem; */
+  font-kerning: auto;
+  font-optical-sizing: auto;
+}
+
+#form{
+  /* width: 540px;
+  height: 764px; */
+  padding-left: 25rem;
+  padding-right: 25rem;
+  padding-top: 5rem;
+  padding-bottom: 10rem;
+  /* box-shadow: 0px 0px 0px !important;
+  border-top : none;
+  border-left : none;
+  border-right : none; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+button{
+  font-size: 19.5px;
+  /* height: 42px; */
+  color: rgb(255, 255, 255);
+  outline-color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
+  font-weight: 400;
+  font-family: Arial;
+  cursor: pointer;
+  /* border-radius: 10px; */
+  /* width: 147px; */
+  font-stretch: 100%;
+  border-top-left-radius: 300px;
+  border-top-right-radius: 300px;
+  border-right-width: 2px;
+  border-right-style: solid;
+  border-left-width: 2px;
+  border-left-style: solid;
+
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+
+}
+
+.control
+.input {
+  box-shadow: 0px 0px 0px !important;
+  border-top : none;
+  border-left : none;
+  border-right : none;
+}
+
+.control
+.textarea {
+  /* box-shadow: 0px 0px 0px !important; */
+  box-shadow: 0px 0px 0px;
+  border-top : none;
+  border-left : none;
+  border-right : none;
+  resize: none; 
+}
+
 .fourth_section_title{
   color: black;
   /* background-color: blue; */

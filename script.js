@@ -1,1 +1,1 @@
-// console.log("hello_p");
+console.log("hello_p");

@@ -57,18 +57,152 @@
         </span>
       </div>
 
-      <div class="third_section_title">
-        <div class="third_section_text1">
-          <p>NOSE & EAR PIERCINGS</p>
-        </div>
-        <div class="third_section_text2">
-          <p>Find your style now!</p>
-        </div>
-      </div>
 
-      <div class="fourth_section_title">
+      
+      <!-- <div class="third_section_title">
+        <div class="third_section_text_contact">
+          <p>We want to hear from you!</p>
+        </div>
+      </div> -->
 
-      </div>
+      
+
+
+
+      <form id="form" class="container m-4 pl-4" method="POST">
+        <div class="third_section_title">
+          <div class="third_section_text_contact">
+            <h3>We want to hear from you!</h3>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder=""
+              name="Name"
+            />
+          </div>
+        </div>
+  
+        <!-- <div class="field">
+          <label class="label">Last Name</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder="Your Last Name"
+              name="Last Name"
+            />
+          </div>
+        </div> -->
+  
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input
+              class="input"
+              type="email"
+              placeholder=""
+              name="Email"
+            />
+          </div>
+        </div>
+  
+        <div class="field">
+          <label class="label">Phone</label>
+          <div class="control">
+            <input
+              class="input"
+              type="mobile"
+              placeholder=""
+              name="Phone"
+            />
+          </div>
+        </div>
+  
+        <!-- <div class="field">
+          <label class="label">Date of Birth</label>
+          <div class="control">
+            <input
+              class="input"
+              type="date"
+              placeholder="Your Date of Birth"
+              name="DOB"
+            />
+          </div>
+        </div> -->
+  
+        <!-- <div class="field">
+          <label class="label">Gender</label>
+          <div class="control">
+            <label class="radio">
+              <input type="radio" name="Gender" value="male" /> Male
+            </label>
+            <label class="radio">
+              <input type="radio" name="Gender" value="female" /> Female
+            </label>
+          </div>
+        </div> -->
+  
+        <!-- <div class="field">
+          <label class="label">Agree to Terms</label>
+          <div class="control">
+            <label class="checkbox">
+              <input type="checkbox" name="Agree To Terms" value="yes" /> I agree
+              to the terms and conditions
+            </label>
+          </div>
+        </div> -->
+  
+        <div class="field">
+          <label class="label">Write a message</label>
+          <div class="control">
+            <textarea
+              class="textarea"
+              placeholder=""
+              name="Notes"
+            ></textarea>
+          </div>
+        </div>
+  
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-primary" type="submit" id="submit-button">
+              Submit
+            </button>
+          </div>
+          <!-- <div class="control">
+            <button class="button is-danger">Cancel</button>
+          </div> -->
+        </div>
+      </form>
+      <div
+        id="message"
+        style="
+          display: none;
+          margin: 20px;
+          font-weight: bold;
+          color: green;
+          padding: 8px;
+          background-color: beige;
+          border-radius: 4px;
+          border-color: aquamarine;
+        "
+      ></div>
+
+
+
+
+
+
+
+
+
+
+
 
       <div class="fifth_section_title">
         <div class="fifth_section_title_a">
@@ -94,11 +228,67 @@
   
     </div>
 
-    <!-- <footer>
-      <p>    © PiercingByHellen 2023</p>
-    </footer> -->
+    
 
     <script>
+      document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        document.getElementById("message").textContent = "Submitting..";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("submit-button").disabled = true;
+
+        // Collect the form data
+        var formData = new FormData(this);
+        var keyValuePairs = [];
+        for (var pair of formData.entries()) {
+          keyValuePairs.push(pair[0] + "=" + pair[1]);
+        }
+
+        var formDataString = keyValuePairs.join("&");
+
+        // Send a POST request to your Google Apps Script
+        fetch(
+          "https://script.google.com/macros/s/AKfycbz7dZ0ZRiXS00CamDR0n3Kr9SiqD1WUO8ta7ExejbFTY4mHTpDrpX2iQcssseE5vaki/exec",
+          {
+            redirect: "follow",
+            method: "POST",
+            body: formDataString,
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+          }
+        )
+          .then(function (response) {
+            // Check if the request was successful
+            if (response) {
+              return response; // Assuming your script returns JSON response
+            } else {
+              throw new Error("Failed to submit the form.");
+            }
+          })
+          .then(function (data) {
+            // Display a success message
+            document.getElementById("message").textContent =
+              "Data submitted successfully!";
+            document.getElementById("message").style.display = "block";
+            document.getElementById("message").style.backgroundColor = "green";
+            document.getElementById("message").style.color = "beige";
+            document.getElementById("submit-button").disabled = false;
+            document.getElementById("form").reset();
+
+            setTimeout(function () {
+              document.getElementById("message").textContent = "";
+              document.getElementById("message").style.display = "none";
+            }, 2600);
+          })
+          .catch(function (error) {
+            // Handle errors, you can display an error message here
+            console.error(error);
+            document.getElementById("message").textContent =
+              "An error occurred while submitting the form.";
+            document.getElementById("message").style.display = "block";
+          });
+      });
     </script>
 
 
