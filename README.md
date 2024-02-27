@@ -1,6 +1,6 @@
 # PiercingByHellen
 
-# Simple website for piercings
+# Simple website for piercingss
 
 
 if you wanna see it live visit:
