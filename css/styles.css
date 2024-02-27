@@ -144,6 +144,40 @@ hr {
   /* padding: 5.5rem; */
   font-kerning: auto;
   font-optical-sizing: auto;
+  padding-bottom: 2rem;
+  padding-left: 3rem;
+}
+
+form
+input{
+  width: 28.125rem;
+  box-shadow: 0px 0px 0px;
+  border-top : none;
+  border-left : none;
+  border-right : none;
+  height: 2.75rem;
+}
+
+.control{
+  height: 2.75rem;
+}
+
+.field{
+  width:28.125rem;
+  height:3.75rem;
+  margin-bottom: 2.0625rem;
+}
+
+.field
+label{
+  vertical-align: baseline;
+  /* max-width: 100%; */
+  /* background-color: yellow; */
+  width: 430px;
+  font-weight: 400;
+  display: flex;
+  align-content: flex-start;
+  line-height: 0.875rem;
 }
 
 #form{
@@ -192,13 +226,13 @@ button{
 
 }
 
-.control
+/* .control
 .input {
-  box-shadow: 0px 0px 0px !important;
+  box-shadow: 0px 0px 0px;
   border-top : none;
   border-left : none;
   border-right : none;
-}
+} */
 
 .control
 .textarea {
@@ -207,7 +241,15 @@ button{
   border-top : none;
   border-left : none;
   border-right : none;
-  resize: none; 
+  resize: none;
+  width: 28.125rem; 
+  /* box-shadow: inset; */
+  /* font-weight: 400; */
+  /* border-bottom-color: rgb(118,118,118); */
+  /* background-color: rgb(255,255,255);
+  border-image-width: 1; */
+  border-width: 2px;
+  height: 2.75rem;
 }
 
 .fourth_section_title{
