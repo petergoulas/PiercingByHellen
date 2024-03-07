@@ -118,6 +118,7 @@ hr {
   /* padding: 150px; */
   padding: 20rem;
   position: relative;
+  max-width: 100%;
 }
 
 .third_section_title {
@@ -345,9 +346,15 @@ a:active { color: black}
   /* h4 {
     font-size: 22px;
   } */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
   body {
     color:blue;
     /* font-size: 150%; */
+    
   }
 }
 
