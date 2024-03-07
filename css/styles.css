@@ -1,3 +1,12 @@
+/* html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+} */
+
 
 /* include this always in css probably */
 * { 
@@ -16,6 +25,13 @@ body {
   /* font-family: 'Roboto', arial; */
   /* font-family: Arial, CenturyGothic, sans-serif; */
   /* font-size: 18px; */
+}
+
+/* no scrollbar for images that overflow */
+img {
+  /* max-inline-size: 100%; */
+  /* block-size: auto; */
+  /* object-fit: cover; */
 }
 
 .container {
@@ -40,6 +56,7 @@ body {
   /* padding: 150px; */
   /* padding: 0.1rem; */
   width: auto;
+  /* width:100%; */
   /* gap:15rem; */
 }
 
@@ -65,6 +82,7 @@ body {
   /* margin-right: 3rem; */
   color:black;
   gap: 3.75rem;
+  /* width: 100%; */
 }
 
 /* invisible third item to align the navbar the way we like it */
@@ -146,6 +164,7 @@ hr {
   font-optical-sizing: auto;
   padding-bottom: 2rem;
   padding-left: 3rem;
+  /* max-width: 100% auto; */
 }
 
 form
@@ -319,3 +338,41 @@ a:link {text-decoration-line:none; color: rgb(119, 103, 239); font-size: 1.5rem;
 a:visited {text-decoration-line:none; color: rgb(119, 103, 239); font-size: 1.5rem; font-family: 'Overlock', Helvetica, sans-serif; font-style: italic; font-weight: 700;}
 a:hover { color: black}
 a:active { color: black}
+
+
+/*Devices smaller than 767px - mobile*/
+@media (max-width: 767px) {
+  /* h4 {
+    font-size: 22px;
+  } */
+  body {
+    color:blue;
+    /* font-size: 150%; */
+  }
+}
+
+/*Devices smaller than 767px - mobile*/
+/* @media (max-width: 767px) { */
+  /* h4 {
+    font-size: 22px;
+  } */
+
+  /* body {
+    font-size: 500px;
+  } */
+
+/* } */
+
+/*Devices between 768px and 1024px - tablet*/
+/* @media (min-width: 768px) and (max-width: 1024px) {
+  h4 {
+    font-size: 28px;
+  }
+} */
+
+/*Devices larger than 1024px - desktop*/
+/* @media (min-width: 1024px) {
+  h4 {
+    font-size: 42px;
+  }
+} */
