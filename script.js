@@ -1,5 +1,23 @@
 console.log("hello_p");
 
+var swiper = new Swiper(".mySwiper", {
+  effect: "cube",
+  grabCursor: true,
+  cubeEffect: {
+    shadow: true,
+    slideShadows: true,
+    shadowOffset: 20,
+    shadowScale: 0.94,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
 document.getElementById("form").addEventListener("submit", function (e) {
     e.preventDefault(); // Prevent the default form submission
     document.getElementById("message").textContent = "Submitting..";
@@ -58,3 +76,4 @@ document.getElementById("form").addEventListener("submit", function (e) {
         document.getElementById("message").style.display = "block";
       });
   });
+
