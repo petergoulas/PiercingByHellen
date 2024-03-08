@@ -143,8 +143,10 @@ hr {
 
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   width: 100%;
+  /* justify-content: center;
+  align-items: center; */
+
 }
 
 .third_section_title
@@ -179,6 +181,18 @@ hr {
   justify-content: center;
   /* align-items: center; */
 }
+
+/* fix the spacing that comes by default by user stylesheet */
+.third_section_text1 p{
+  margin-block-end: 0px; 
+}
+
+/* fix the spacing that comes by default by user stylesheet */
+.third_section_text2 p{
+  margin-block-start: 0px; 
+  /* margin-inline-start: 0px; */
+} 
+
 
 .third_section_title
 .third_section_text_contact{
@@ -378,9 +392,10 @@ a:active { color: black}
   }
 } */
 
+/* small screens */
 @media(max-width: 783px){
-  /* a:link {text-decoration-line:none; color: rgb(119, 103, 239); font-size: 1rem; font-family: 'Overlock', Helvetica, sans-serif, sans-serif; font-style: italic; font-weight: 700;}
-  a:visited {text-decoration-line:none; color: rgb(119, 103, 239); font-size: 1rem; font-family: 'Overlock', Helvetica, sans-serif; font-style: italic; font-weight: 700;} */
+
+  /* index page */
   .navbar_container {
     display: none;
   }
@@ -398,7 +413,6 @@ a:active { color: black}
     justify-content: center;
     justify-content: space-evenly;
   }
-
 
    /* properties for dropdown menu */
   .dropdown {
@@ -448,19 +462,90 @@ a:active { color: black}
     background-color: grey;
   }
 
+  /* .container{
+    overflow-x: scroll;
+  } */
+
+  /* huge bug for small screens */
+  .third_section_title {
+    padding: 0;
+  }
   
+  /* fix the spacing that comes by default by user stylesheet */
+  .third_section_text1 p{
+    /* /* margin-block-start: 0px; */
+    margin-block-end: 0px; 
+    margin-inline-start: 0px;
+    /* margin-inline-end: 0px; */
+  }
+
+  /* fix the spacing that comes by default by user stylesheet */
+  .third_section_text2 p{
+    margin-block-start: 15px; 
+    /* margin-inline-start: 0px; */
+  } 
+
 }
 
+/* @media(min-width: 1650px){
+  a:link {text-decoration-line:none; color: rgb(119, 103, 239); font-size: 2rem; font-family: 'Overlock', Helvetica, sans-serif, sans-serif; font-style: italic; font-weight: 700;}
+  a:visited {text-decoration-line:none; color: rgb(119, 103, 239); font-size: 2rem; font-family: 'Overlock', Helvetica, sans-serif; font-style: italic; font-weight: 700;}
+
+  .fifth_section_title_a{
+    font-family: "Snell Roundhand W01 Script";
+    font-size: 3.75rem;
+  }
+
+  /* initial values 162 - 140 px */
+  /* .brand_container { */
+    /* increase 30% */
+    /* img {
+      width: 215px;
+      height: 188.86px;
+    } */
+  /* }
+} */ 
+
+/* increase by 50% */
 /* @media(min-width: 2000px){
   .second_section_home {
     height: 50rem;
   }
+
+  .brand_container img {
+    width: 240px;
+    height: 210px;
+  }
+  .fifth_section_title_a {
+    font-size: 4.21rem;
+  } 
+
+  a:link {text-decoration-line:none; color: rgb(119, 103, 239); font-size: 2.25rem; font-family: 'Overlock', Helvetica, sans-serif, sans-serif; font-style: italic; font-weight: 700;}
+  a:visited {text-decoration-line:none; color: rgb(119, 103, 239); font-size: 2.25rem; font-family: 'Overlock', Helvetica, sans-serif; font-style: italic; font-weight: 700;}
 } */
 
+/* increase by 70% */
+@media(min-width: 2000px){
 
-@media(min-width: 1650px){
-  a:link {text-decoration-line:none; color: rgb(119, 103, 239); font-size: 2rem; font-family: 'Overlock', Helvetica, sans-serif, sans-serif; font-style: italic; font-weight: 700;}
-  a:visited {text-decoration-line:none; color: rgb(119, 103, 239); font-size: 2rem; font-family: 'Overlock', Helvetica, sans-serif; font-style: italic; font-weight: 700;}
+  .second_section_home {
+    height: 51rem;
+  }
+
+  .brand_container img{
+    width: 272px;
+    height: 238px;
+  }
+
+  .fifth_section_title_a {
+    font-size: 4.78rem;
+  } 
+
+  .fifth_section_title_c {
+    font-size: 25.5px;
+  }
+
+  a:link {text-decoration-line:none; color: rgb(119, 103, 239); font-size: 2.55rem; font-family: 'Overlock', Helvetica, sans-serif, sans-serif; font-style: italic; font-weight: 700;}
+  a:visited {text-decoration-line:none; color: rgb(119, 103, 239); font-size: 2.55rem; font-family: 'Overlock', Helvetica, sans-serif; font-style: italic; font-weight: 700;}
 }
 
 
@@ -510,7 +595,7 @@ a:active { color: black}
   .brand_container img {
       max-width: 100%; 
       height: auto; 
-  } */ */
+  } */
 /* } */
 
 /*Devices smaller than 767px - mobile*/
