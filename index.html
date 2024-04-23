@@ -231,6 +231,13 @@
 
       document.addEventListener("mouseup", dragStop);
       carousel.addEventListener("touchend", dragStop);
+
+      /* fix bug for scrolling in mobile version */
+      // Remove touch event listeners for dragging
+      carousel.removeEventListener("touchstart", dragStart);
+      document.removeEventListener("touchmove", dragging);
+      carousel.removeEventListener("touchend", dragStop);
+      
     </script>
     
     <!-- for swiper -->

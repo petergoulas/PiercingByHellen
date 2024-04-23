@@ -414,6 +414,8 @@ body {
   white-space: nowrap;
   scroll-behavior: smooth;
 }
+
+/* dragging behavior */
 .carousel.dragging{
   cursor: grab;
   scroll-behavior: auto;
@@ -421,6 +423,7 @@ body {
 .carousel.dragging img{
   pointer-events: none;
 }
+
 .carousel img{
   /* initial is 340px */
   height: 611px;
