@@ -19,8 +19,8 @@
     <link href="https://db.onlinewebfonts.com/c/f8deb3c1a029ec56b15bb462c1518f07?family=Snell+Roundhand+W01+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Overlock:ital@1&display=swap" rel="stylesheet">
 
-    <!-- link for swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- link image slider -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
 
     </style>
@@ -100,77 +100,23 @@
 
       </div> -->
 
-      <!-- <section id="slider-1">
-        <div class="swiper" id="swiper-1">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="img/2.jpg" alt="piercing">
-            </div>
-            <div class="swiper-slide">
-              <img src="img/santorini.jpg" alt="piercing">
-            </div>
-            <div class="swiper-slide">
-              <img src="img/mylos.jpg" alt="piercing">
-            </div>
-          </div>
-          <div class="swiper-pagination">
-
-          </div>
-        </div>
-      </section> -->
-      <!-- <section id="slider-2">
-        <div class="container wide">
-          <div class="swiper" id="swiper-2">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <figure>
-                  <img src="img/santorini.jpg" alt="place">
-                </figure>
-              </div>
-              <div class="swiper-slide">
-                <figure>
-                  <img src="img/2.jpg" alt="place">
-                </figure>
-              </div>
-              <div class="swiper-slide">
-                <figure>
-                  <img src="img/mylos.jpg" alt="place">
-                </figure>
-              </div>
-            </div>  
-          </div>
-        </div>
-      </section>
-   -->
-
-   <h1> < < < < < < <</h1>
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </div>
-      <!-- <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div> -->
-      <!-- <div class="swiper-pagination"></div> -->
-    </div>
-    <h1> < < < < < < <</h1>
-
     <!-- <button class="cursor-pointer duration-200 hover:scale-125 active:scale-100" title="Go Back">
       <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24" class="stroke-blue-300">
         <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" d="M11 6L5 12M5 12L11 18M5 12H19"></path>
       </svg>
     </button> -->
 
+      <div class="wrapper">
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <div class="carousel">
+          <img src="img/image-1.jpg" alt="img" draggable="false">
+          <img src="img/image-2.jpg" alt="img" draggable="false">
+          <img src="img/image-3.jpg"  alt="img" draggable="false">
+          <img src="img/image-4.jpg"  alt="img" draggable="false">
+          <img src="img/image-5.jpg"  alt="img" draggable="false">
+        </div>
+        <i id="right" class="fa-solid fa-angle-right"></i>
+      </div>
 
       <div class="fifth_section_title">
         <div class="fifth_section_title_a">
@@ -197,10 +143,98 @@
       <p>    © PiercingByHellen 2023</p>
     </footer> -->
 
+    <!-- <script>
+      let scrollContainer = document.querySelector(".gallery");
+      let backBtn = document.getElementById("backBtn");
+      let nextBtn = document.getElementById("nextBtn");
+      scrollContainer.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
+        scrollContainer.style.scrollBehavior = "auto";
+      });
+      backBtn.addEventListener("click", ()=> {
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft -=900;
+      })
+    </script> -->
     <script>
+      const carousel = document.querySelector(".carousel"),
+      firstImg = carousel.querySelectorAll("img")[0],
+      arrowIcons = document.querySelectorAll(".wrapper i");
+
+      let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
+
+      const showHideIcons = () => {
+          // showing and hiding prev/next icon according to carousel scroll left value
+          let scrollWidth = carousel.scrollWidth - carousel.clientWidth; // getting max scrollable width
+          arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
+          arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
+      }
+
+      arrowIcons.forEach(icon => {
+          icon.addEventListener("click", () => {
+              let firstImgWidth = firstImg.clientWidth + 14; // getting first img width & adding 14 margin value
+              // if clicked icon is left, reduce width value from the carousel scroll left else add to it
+              carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+              setTimeout(() => showHideIcons(), 60); // calling showHideIcons after 60ms
+          });
+      });
+
+      const autoSlide = () => {
+          // if there is no image left to scroll then return from here
+          if(carousel.scrollLeft - (carousel.scrollWidth - carousel.clientWidth) > -1 || carousel.scrollLeft <= 0) return;
+
+          positionDiff = Math.abs(positionDiff); // making positionDiff value to positive
+          let firstImgWidth = firstImg.clientWidth + 14;
+          // getting difference value that needs to add or reduce from carousel left to take middle img center
+          let valDifference = firstImgWidth - positionDiff;
+
+          if(carousel.scrollLeft > prevScrollLeft) { // if user is scrolling to the right
+              return carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+          }
+          // if user is scrolling to the left
+          carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+      }
+
+      const dragStart = (e) => {
+          // updatating global variables value on mouse down event
+          isDragStart = true;
+          prevPageX = e.pageX || e.touches[0].pageX;
+          prevScrollLeft = carousel.scrollLeft;
+      }
+
+      const dragging = (e) => {
+          // scrolling images/carousel to left according to mouse pointer
+          if(!isDragStart) return;
+          e.preventDefault();
+          isDragging = true;
+          carousel.classList.add("dragging");
+          positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+          carousel.scrollLeft = prevScrollLeft - positionDiff;
+          showHideIcons();
+      }
+
+      const dragStop = () => {
+          isDragStart = false;
+          carousel.classList.remove("dragging");
+
+          if(!isDragging) return;
+          isDragging = false;
+          autoSlide();
+      }
+
+      carousel.addEventListener("mousedown", dragStart);
+      carousel.addEventListener("touchstart", dragStart);
+
+      document.addEventListener("mousemove", dragging);
+      carousel.addEventListener("touchmove", dragging);
+
+      document.addEventListener("mouseup", dragStop);
+      carousel.addEventListener("touchend", dragStop);
     </script>
+    
     <!-- for swiper -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script type="text/javascript" src="script.js"></script>
   </body>
 
